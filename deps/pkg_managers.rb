@@ -53,3 +53,10 @@ dep 'yum', :template => 'external' do
     log "Your system doesn't seem to have Yum installed. Is it Redhat-based?"
   }
 end
+
+dep 'pacman', :template => 'external' do
+  expects 'pacman'
+  otherwise {
+    log "Your system doesn't seem to have pacman installed. Is it archlinux?"
+  }
+end

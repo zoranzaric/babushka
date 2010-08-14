@@ -199,6 +199,14 @@ module Babushka
     end
   end
 
+  class ArchSystemSpec < LinuxSystemSpec
+    def flavour; :arch end
+    def flavour_str; :arch end
+    def version; :arch end
+    def get_version_info; :arch end
+    def pkg_helper; PacmanHelper end
+  end
+
   class DebianSystemSpec < LinuxSystemSpec
     def flavour; flavour_str.downcase.to_sym end
     def flavour_str; version_info.val_for 'Distributor ID' end
